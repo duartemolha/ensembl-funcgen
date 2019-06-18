@@ -237,7 +237,7 @@ sub add_regulatory_activity :Test(1) {
                                                         ->{additional_activity});
 
     is_deeply(
-        pop $self->{fetched}->[0]->regulatory_activity(),
+        pop @{$self->{fetched}->[0]->regulatory_activity()},
         $self->parameters->{additional_activity},
         'add_regulatory_activity() works'
     );
